@@ -1,0 +1,18 @@
+# Render deployment configuration
+services:
+  - type: web
+    name: organic-food-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        sync: false # You'll set this manually in Render dashboard
+      - key: JWT_SECRET
+        sync: false # You'll set this manually in Render dashboard
+      - key: CLIENT_URL
+        sync: false # You'll set this manually in Render dashboard
