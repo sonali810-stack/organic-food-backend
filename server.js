@@ -79,6 +79,9 @@ app.use('/api/orders', orderRoutes);     // Order routes
 app.use('/api/wishlist', wishlistRoutes); // Wishlist routes
 app.use('/api/ai', aiRoutes);            // AI chatbot routes
 
+// Backward-compatible alias for deployments where frontend may hit /ai/chat.
+app.use('/ai', aiRoutes);
+
 /**
  * ROOT ROUTE
  * 
