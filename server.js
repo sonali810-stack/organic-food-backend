@@ -69,6 +69,7 @@ const productRoutes = require('./routes/products');
 const cartRoutes = require('./routes/cart');
 const orderRoutes = require('./routes/orders');
 const wishlistRoutes = require('./routes/wishlist');
+const aiRoutes = require('./routes/ai');
 
 // Mount routes
 app.use('/api/auth', authRoutes);        // Authentication routes
@@ -76,6 +77,7 @@ app.use('/api/products', productRoutes); // Product routes
 app.use('/api/cart', cartRoutes);        // Cart routes
 app.use('/api/orders', orderRoutes);     // Order routes
 app.use('/api/wishlist', wishlistRoutes); // Wishlist routes
+app.use('/api/ai', aiRoutes);            // AI chatbot routes
 
 /**
  * ROOT ROUTE
@@ -92,7 +94,8 @@ app.get('/', (req, res) => {
             auth: '/api/auth',
             products: '/api/products',
             cart: '/api/cart',
-            orders: '/api/orders'
+            orders: '/api/orders',
+            ai: '/api/ai/chat'
         }
     });
 });
@@ -162,6 +165,7 @@ app.listen(PORT, () => {
     console.log(`   GET  http://localhost:${PORT}/api/products`);
     console.log(`   GET  http://localhost:${PORT}/api/cart`);
     console.log(`   GET  http://localhost:${PORT}/api/orders`);
+    console.log(`   POST http://localhost:${PORT}/api/ai/chat`);
     console.log('\n💡 Press Ctrl+C to stop the server\n');
 });
 
